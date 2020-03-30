@@ -17,7 +17,7 @@ public class Main {
         }
 
         int productValue = getProduct(5,2);
-        System.out.println(" Product is " + productValue);
+        //System.out.println(" Product is " + productValue);
 
         int sumValue = getSum(productValue);
         System.out.println(" Sum is " + sumValue);
@@ -27,13 +27,20 @@ public class Main {
 
     public static int getProduct(int n, int c){
 
-        int product = 1, n1 = n -1, n2 = n - c, sum = 0, n3 , i, count = n ;
-        product = n1 * n2;
-        sum = sum + product;
-        System.out.println(" Product for " + n1 + " and " + n2 + " is: " + product);
+        int product = 1,  sum = 0, n3 , i, count = n ;
+        while (n > 0) {
+            int n1 = n -1, n2 = n - c;
+            if(n == 1){
+                product = 1 * 1;
+                sum = sum + product;
+            }
+            product = n1 * n2;
+            sum = sum + product;
+            System.out.println(" Product for " + n1 + " and " + n2 + " is: " + product);
+            n--;
 
-        n--;
-        return product;
+        }
+        return sum;
     }
 
     public static int getSum (int prod){
